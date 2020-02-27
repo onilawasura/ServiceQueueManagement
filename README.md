@@ -30,6 +30,7 @@ Deliverables: Application with GUI, Database Schema Diagram.
 Reffered Documents
 
 Medium - https://medium.com/swlh/building-a-nice-multi-layer-net-core-3-api-c68a9ef16368
+
 ASP.Net E Books - https://docs.microsoft.com/en-us/dotnet/architecture/modern-web-apps-azure/common-web-application-architectures
 
 
