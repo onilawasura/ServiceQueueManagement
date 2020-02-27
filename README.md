@@ -32,7 +32,9 @@ Reffered Documents
 
 Medium - https://medium.com/swlh/building-a-nice-multi-layer-net-core-3-api-c68a9ef16368
 
-ASP.Net E Books - https://docs.microsoft.com/en-us/dotnet/architecture/modern-web-apps-azure/common-web-application-architectures
+ASP.Net E Books(Architecture) - https://docs.microsoft.com/en-us/dotnet/architecture/modern-web-apps-azure/common-web-application-architectures ( * Read Full Documentation )
+
+Architecture And Design Pattern - https://www.c-sharpcorner.com/article/asp-net-core-2-architecture-design-pattern-ideology/
 
 UnitOfWork - https://www.c-sharpcorner.com/UploadFile/b1df45/unit-of-work-in-repository-pattern/
              https://www.youtube.com/watch?v=j6jSzayfpck
@@ -40,6 +42,10 @@ UnitOfWork - https://www.c-sharpcorner.com/UploadFile/b1df45/unit-of-work-in-rep
 Model Naming Convention - https://stackoverflow.com/questions/11119154/entity-framework-table-naming-convention/11119630
 
 Fluent API over Data Annotations - https://entityframework.net/knowledge-base/5354900/entity-framework-code-first---advantages-and-disadvantages-of-fluent-api-vs-data-annotations
+
+Validations and Constraints using Data Annotaions in .Net - https://docs.microsoft.com/en-us/aspnet/mvc/overview/older-versions-1/models-data/validation-with-the-data-annotation-validators-cs
+https://www.learnentityframeworkcore.com/configuration/data-annotation-attributes
+
 
 
 
