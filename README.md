@@ -33,4 +33,10 @@ Medium - https://medium.com/swlh/building-a-nice-multi-layer-net-core-3-api-c68a
 
 ASP.Net E Books - https://docs.microsoft.com/en-us/dotnet/architecture/modern-web-apps-azure/common-web-application-architectures
 
+UnitOfWork - https://www.c-sharpcorner.com/UploadFile/b1df45/unit-of-work-in-repository-pattern/
+             https://www.youtube.com/watch?v=j6jSzayfpck
+
+Model Naming Convention - https://stackoverflow.com/questions/11119154/entity-framework-table-naming-convention/11119630
+
+
 
