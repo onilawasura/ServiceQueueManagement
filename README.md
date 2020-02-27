@@ -26,6 +26,7 @@ The admin should be able to view the average wait time.
 
 Deliverables: Application with GUI, Database Schema Diagram.
 
+Associated FrontEnd Repository - 
 
 Reffered Documents
 
@@ -37,6 +38,8 @@ UnitOfWork - https://www.c-sharpcorner.com/UploadFile/b1df45/unit-of-work-in-rep
              https://www.youtube.com/watch?v=j6jSzayfpck
 
 Model Naming Convention - https://stackoverflow.com/questions/11119154/entity-framework-table-naming-convention/11119630
+
+Fluent API over Data Annotations - https://entityframework.net/knowledge-base/5354900/entity-framework-code-first---advantages-and-disadvantages-of-fluent-api-vs-data-annotations
 
 
 
