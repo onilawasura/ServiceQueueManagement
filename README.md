@@ -46,6 +46,8 @@ Fluent API over Data Annotations - https://entityframework.net/knowledge-base/53
 Validations and Constraints using Data Annotaions in .Net - https://docs.microsoft.com/en-us/aspnet/mvc/overview/older-versions-1/models-data/validation-with-the-data-annotation-validators-cs
 https://www.learnentityframeworkcore.com/configuration/data-annotation-attributes
 
+Dependency Injection - https://www.c-sharpcorner.com/article/understanding-the-dependency-injection-using-constructor-property-and-method-in/
+
 
 
 
