@@ -49,5 +49,7 @@ https://www.learnentityframeworkcore.com/configuration/data-annotation-attribute
 Dependency Injection - https://www.c-sharpcorner.com/article/understanding-the-dependency-injection-using-constructor-property-and-method-in/
 
 
+Validations and Constraints in Fluent Api - https://www.entityframeworktutorial.net/code-first/configure-many-to-many-relationship-in-code-first.aspx
+
 
 
