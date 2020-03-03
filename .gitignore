@@ -338,3 +338,5 @@ ASALocalRun/
 
 # BeatPulse healthcheck temp database
 healthchecksdb
+/ServiceQueueManagement.Data/Context/ServiceQueueDbContext.cs
+/ServiceQueueManagement.Data/Migrations
