@@ -15,6 +15,7 @@ namespace ServiceQueueManagement.Data.UOW
         private CustomerServiceRepositry _customerServiceRepositry;
         private EmployeeServiceRepository _employeeServiceRepository;
         private AppoinmentRepository _appoinmentRepository;
+        private EmployeeRepository _employeeRepository;
 
         public UnitOfWork(ServiceQueueDbContext context)
         {
@@ -26,6 +27,8 @@ namespace ServiceQueueManagement.Data.UOW
         public IEmployeeServiceRepository employeeService => _employeeServiceRepository ?? new EmployeeServiceRepository(_context);
 
         public IAppoinmentRepository appoinmentRepository => _appoinmentRepository ?? new AppoinmentRepository(_context);
+
+        public IEmployeeRepository employeeRepository => _employeeRepository ?? new EmployeeRepository(_context);
 
         //public CustomerRepository Customerr => _customerRepository ?? new CustomerRepository(_context);
 

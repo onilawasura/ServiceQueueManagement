@@ -1,4 +1,5 @@
-﻿using ServiceQueueManagement.Core.Models;
+﻿using ServiceQueueManagement.Core.DTOs;
+using ServiceQueueManagement.Core.Models;
 using ServiceQueueManagement.Core.Repositories;
 using ServiceQueueManagement.Core.Services;
 using System;
@@ -67,6 +68,10 @@ namespace ServiceQueueManagement.Services.ServiceImp
 
         }
 
+        public List<OngoingAppoinmentsDto> GetOngoingAppoinmentsByServiceSlotId(int serviceSlotId)
+        {
+            return _unitOfWork.appoinmentRepository.GetOngoingAppoinmentsByServiceSlotId(serviceSlotId);
+        }
     }
 
     internal class Temp

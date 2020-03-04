@@ -6,9 +6,10 @@ using System.Text;
 
 namespace ServiceQueueManagement.Core.Models
 {
-
-    //this table is used as a primary table to appoinment table(apponment is many to many with customer service and employee)
-    //
+    /// <summary>
+    /// records services which are customers requesting
+    /// this table is used as a primary table to appoinment table(apponment is many to many with customer service and employee)
+    /// </summary>
     public class CustomerService
     {
         [Key]
@@ -21,9 +22,6 @@ namespace ServiceQueueManagement.Core.Models
         public int FkServiceId { get; set; }
         public Service Service { get; set; }
 
-
-
-        //use to check this record has alredy assigned or not
         public bool? IsAssigned { get; set; }
 
         public virtual ICollection<Appoinment> Appoinment { get; set; }

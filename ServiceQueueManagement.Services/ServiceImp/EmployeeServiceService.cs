@@ -15,7 +15,7 @@ namespace ServiceQueueManagement.Services.ServiceImp
             this._unitOfWork = unitOfWork;
         }
 
-        public List<EmployeeService> GetEmployeeServiceByServiceId(int serviceID)
+        public List<Core.Models.EmployeeService> GetEmployeeServiceByServiceId(int serviceID)
         {
             return _unitOfWork.employeeService.GetEmployeeServiceByServiceId(serviceID);
         }

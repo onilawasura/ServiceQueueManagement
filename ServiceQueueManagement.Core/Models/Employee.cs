@@ -7,16 +7,18 @@ using System.Text;
 
 namespace ServiceQueueManagement.Core.Models
 {
+    /// <summary>
+    /// responsible for employee details. employee table model class
+    /// </summary>
     public class Employee 
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
-
         [Required(ErrorMessage = "This Field is Required")]
         [StringLength(100, ErrorMessage = "Maximum Character length exceeded")]
         public string Name { get; set; }
-        //public string B_Day { get; set; }
+
         public int HelpDesk_No { get; set; }
         public string Nic { get; set; }
         public string Contact { get; set; }
@@ -24,6 +26,5 @@ namespace ServiceQueueManagement.Core.Models
 
         public virtual ICollection<EmployeeService> EmployeeService { get; set; }
         public virtual ICollection<Appoinment> Appoinment { get; set; }
-        //public virtual ICollection<CustomerService> CustomerService { get; set; }
     }
 }

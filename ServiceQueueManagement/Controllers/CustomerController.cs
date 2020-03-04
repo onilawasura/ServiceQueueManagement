@@ -10,19 +10,22 @@ using ServiceQueueManagement.Core.Services;
 
 namespace ServiceQueueManagement.API.Controllers
 {
-    //[Route("api/[controller]")]
     [ApiController]
     public class CustomerController : ControllerBase
     {
 
         private readonly ICustomerService _customerService;
-        private readonly ICustomerServiceService _customerServiceService;
 
-        public CustomerController(ICustomerService customerService, ICustomerServiceService customerServiceService)
+        public CustomerController(ICustomerService customerService)
         {
             this._customerService = customerService;
-            this._customerServiceService = customerServiceService;
+
         }
+
+        /// <summary>
+        /// Test Method. not important 
+        /// </summary>
+        /// <returns></returns>
         [Route("api/customer/GetAllCustomers")]
         [HttpGet]
         public IActionResult GetAllCustomers()
@@ -30,6 +33,11 @@ namespace ServiceQueueManagement.API.Controllers
             return Ok();
         }
 
+        /// <summary>
+        /// respnsible for store customer data
+        /// </summary>
+        /// <param name="customer">used customer type object to retrive customer data</param>
+        /// <returns>newly created customer</returns>
         [Route("api/customer/AddCustomer")]
         [HttpPost]
         public async Task<ActionResult<IEnumerable<Customer>>> AddCustomer(Customer customer)
@@ -38,20 +46,7 @@ namespace ServiceQueueManagement.API.Controllers
             return Ok(cst);
         }
 
-        [Route("api/customer/AddCustomerService")]
-        [HttpPost]
-        public async Task<ActionResult<IEnumerable<Customer>>> AddCustomerService(CustomerServiceDto customerServiceDto)
-        {
-            var res = await _customerServiceService.CreateCustomerService(customerServiceDto);
-            return Ok(res);
-        }
 
-        //[Route("api/customer/AddCustomerService")]
-        //[HttpPost]
-        //public ActionResult AddCustomerService(CustomerServiceDto customerServiceDto)
-        //{
-        //    //var res = await _customerServiceService.CreateCustomerService(customerServiceDto);
-        //    return Ok();
-        //}
+
     }
 }

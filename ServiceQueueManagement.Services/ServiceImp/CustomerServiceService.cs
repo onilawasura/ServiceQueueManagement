@@ -11,7 +11,6 @@ namespace ServiceQueueManagement.Services.ServiceImp
 {
     public class CustomerServiceService : ICustomerServiceService
     {
-
         private readonly IUnitOfWork _unitOfWork;
         public CustomerServiceService(IUnitOfWork unitOfWork)
         {

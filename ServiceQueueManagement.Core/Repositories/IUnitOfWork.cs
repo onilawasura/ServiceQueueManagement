@@ -11,6 +11,7 @@ namespace ServiceQueueManagement.Core.Repositories
         ICustomerServiceRepositry CustomerService { get; }
         IEmployeeServiceRepository employeeService { get; }
         IAppoinmentRepository appoinmentRepository { get; }
+        IEmployeeRepository employeeRepository { get; }
         Task<int> CommitAsync();
         void CommitChanges();
     }

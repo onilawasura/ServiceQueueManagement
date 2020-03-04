@@ -6,6 +6,9 @@ using System.Text;
 
 namespace ServiceQueueManagement.Core.Models
 {
+    /// <summary>
+    /// responsible for store services meta data
+    /// </summary>
     public class Service
     {
         [Key]
@@ -15,9 +18,8 @@ namespace ServiceQueueManagement.Core.Models
         [Required(ErrorMessage = "This Field is Required")]
         [StringLength(100, ErrorMessage = "Maximum Character length exceeded")]
         public string Name { get; set; }
-        public int TimeDuration { get; set; }
 
-        //public virtual ICollection<Customer> Customer { get; set; }
+        public int TimeDuration { get; set; }
         public virtual ICollection<EmployeeService> EmployeeService { get; set; }
         public virtual ICollection<CustomerService> CustomerService { get; set; }
     }

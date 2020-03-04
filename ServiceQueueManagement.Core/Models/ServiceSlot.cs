@@ -6,6 +6,9 @@ using System.Text;
 
 namespace ServiceQueueManagement.Core.Models
 {
+    /// <summary>
+    /// store service slot meta data
+    /// </summary>
     public class ServiceSlot 
     {
         [Key]
@@ -17,7 +20,6 @@ namespace ServiceQueueManagement.Core.Models
         public string Name { get; set; }
 
         public int ServiceSequenceId { get; set; }
-
         public virtual ICollection<Appoinment> Appoinment { get; set; }
     }
 }
