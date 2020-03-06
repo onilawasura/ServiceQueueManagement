@@ -51,5 +51,7 @@ Dependency Injection - https://www.c-sharpcorner.com/article/understanding-the-d
 
 Validations and Constraints in Fluent Api - https://www.entityframeworktutorial.net/code-first/configure-many-to-many-relationship-in-code-first.aspx
 
+Model and State validation - https://docs.microsoft.com/en-us/aspnet/web-api/overview/formats-and-model-binding/model-validation-in-aspnet-web-api
+
 
 
