@@ -1,5 +1,6 @@
 ﻿using ServiceQueueManagement.Core.Models;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,5 +15,12 @@ namespace ServiceQueueManagement.Core.Services
         /// <param name="newCustomer">customer type object includs customer details about to be create</param>
         /// <returns>newly created customer</returns>
         Task<Customer> CreateCustomer(Customer newCustomer);
+
+
+        /// <summary>
+        /// Retrieves list of customers
+        /// </summary>
+        /// <returns>list of customers</returns>
+        List<Customer> GetAllCustomers();
     }
 }

@@ -2,6 +2,7 @@
 using ServiceQueueManagement.Core.Repositories;
 using ServiceQueueManagement.Core.Services;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
@@ -28,6 +29,12 @@ namespace ServiceQueueManagement.Services
             //var xx = _unitOfWork.Customer.GetAllWithServiceAsync();
             await _unitOfWork.CommitAsync();
             return newCustomer;
+        }
+
+        public List<Customer> GetAllCustomers()
+        {
+            var xx = _unitOfWork.Customer.GetAllCustomers(); ;
+            return xx;
         }
     }
 }

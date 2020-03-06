@@ -35,7 +35,7 @@ namespace ServiceQueueManagement.Services.ServiceImp
                     Temp tp = new Temp();
                     tp.FkEmployeeId = employee.FkEmployeeId;
                     tp.Count = lstAppoinments.Count;
-                    tp.ServiceSlotId = lstAppoinments.Max(x => x.FkServiceSlotId) ?? 0;                  
+                    tp.ServiceSlotId = lstAppoinments.Max(x => x.FkServiceSlotId) ?? 0;
                     temps.Add(tp);
                 }
 
@@ -59,7 +59,7 @@ namespace ServiceQueueManagement.Services.ServiceImp
                     }
 
                 }
-                appoinment.FkServiceSlotId = minQueue.ServiceSlotId + 1 ;
+                appoinment.FkServiceSlotId = minQueue.ServiceSlotId + 1;
 
                 _unitOfWork.appoinmentRepository.addAppoinment(appoinment);
                 _unitOfWork.CustomerService.UpdateAssignedCustomerServices(appoinment.FkCustomerServiceId);
@@ -68,9 +68,21 @@ namespace ServiceQueueManagement.Services.ServiceImp
 
         }
 
-        public List<OngoingAppoinmentsDto> GetOngoingAppoinmentsByServiceSlotId(int serviceSlotId)
+        public List<OngoingAppoinmentsDto> GetOngoingAppoinmentsByServiceSlotId(int? serviceSlotId, int? customerId)
         {
-            return _unitOfWork.appoinmentRepository.GetOngoingAppoinmentsByServiceSlotId(serviceSlotId);
+
+            if (serviceSlotId == null && customerId == null)
+            {
+                return _unitOfWork.appoinmentRepository.GetOngoingAppoinmentsByServiceSlotId(serviceSlotId);
+            }else if(serviceSlotId != null && customerId == null)
+            {
+                return _unitOfWork.appoinmentRepository.GetOngoingAppoinmentsByServiceSlotId(serviceSlotId);
+            }else if (serviceSlotId == null && customerId != null)
+            {
+                return _unitOfWork.appoinmentRepository.GetOngoingAppoinmentsByCustomerId(customerId);
+            }
+
+            return null;
         }
     }
 

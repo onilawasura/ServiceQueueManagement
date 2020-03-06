@@ -1,4 +1,5 @@
-﻿using ServiceQueueManagement.Core.Repositories;
+﻿using Microsoft.EntityFrameworkCore;
+using ServiceQueueManagement.Core.Repositories;
 using ServiceQueueManagement.Data.Context;
 using System;
 using System.Collections.Generic;
@@ -33,9 +34,9 @@ namespace ServiceQueueManagement.Data.Repositories
             throw new NotImplementedException();
         }
 
-        public Task<IEnumerable<TEntity>> GetAllAsync()
+        public async Task<IEnumerable<TEntity>> GetAllAsync()
         {
-            throw new NotImplementedException();
+            return await _Context.Set<TEntity>().ToListAsync();
         }
 
         public ValueTask<TEntity> GetByIdAsync(int id)

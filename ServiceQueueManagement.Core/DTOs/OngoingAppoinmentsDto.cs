@@ -10,6 +10,7 @@ namespace ServiceQueueManagement.Core.DTOs
         public string CustomerName { get; set; }
         public string EmployeeName { get; set; }
         public string RequiredService { get; set; }
+        public string TimeSlot { get; set; }
 
     }
 }

@@ -30,7 +30,14 @@ namespace ServiceQueueManagement.Core.Repositories
         /// </summary>
         /// <param name="servicesSlotId">integer value</param>
         /// <returns>lsit of ongoingAppoinmentDto type objects</returns>
-        List<OngoingAppoinmentsDto> GetOngoingAppoinmentsByServiceSlotId(int servicesSlotId);
+        List<OngoingAppoinmentsDto> GetOngoingAppoinmentsByServiceSlotId(int? servicesSlotId);
+
+        /// <summary>
+        /// Retrieves list of ongoing appoinment by given customer Id id
+        /// </summary>
+        /// <param name="customerId"></param>
+        /// <returns>lsit of ongoingAppoinmentDto type objects</returns>
+        List<OngoingAppoinmentsDto> GetOngoingAppoinmentsByCustomerId(int? customerId);
 
         /// <summary>
         /// used to add appoinments when system finds the optimum appoinment for purticular custommer

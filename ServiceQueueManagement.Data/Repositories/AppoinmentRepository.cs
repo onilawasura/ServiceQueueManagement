@@ -31,7 +31,7 @@ namespace ServiceQueueManagement.Data.Repositories
             return _Context.Appoinments.Where(x => x.FkEmployeeId == employeeId || x.FkCustomerId == customerId).ToList();
         }
 
-        public List<OngoingAppoinmentsDto> GetOngoingAppoinmentsByServiceSlotId(int servicesSlotId)
+        public List<OngoingAppoinmentsDto> GetOngoingAppoinmentsByCustomerId(int? customerId)
         {
             List<OngoingAppoinmentsDto> lstOngoingAppoinmentsDtos = new List<OngoingAppoinmentsDto>();
             var lstAppoinments = from A in _Context.Appoinments
@@ -39,13 +39,39 @@ namespace ServiceQueueManagement.Data.Repositories
                                  join C in _Context.Customers on A.FkCustomerId equals C.Id
                                  join CS in _Context.CustomerServices on A.FkCustomerServiceId equals CS.Id
                                  join S in _Context.Services on CS.FkServiceId equals S.Id
-                                 where A.FkServiceSlotId == servicesSlotId
+                                 join SS in _Context.ServiceSlots on A.FkServiceSlotId equals SS.Id
+                                 where (A.FkCustomerId == customerId || customerId == null)
                                  select new OngoingAppoinmentsDto
                                  {
                                      CustomerName = C.Name,
                                      ServiceDesk = E.HelpDesk_No,
                                      EmployeeName = E.Name,
-                                     RequiredService = S.Name
+                                     RequiredService = S.Name,
+                                     TimeSlot = SS.Name
+                                 };
+
+            //var xx = lstAppoinments;
+            lstOngoingAppoinmentsDtos.AddRange(lstAppoinments);
+            return lstOngoingAppoinmentsDtos;
+        }
+
+        public List<OngoingAppoinmentsDto> GetOngoingAppoinmentsByServiceSlotId(int? servicesSlotId)
+        {
+            List<OngoingAppoinmentsDto> lstOngoingAppoinmentsDtos = new List<OngoingAppoinmentsDto>();
+            var lstAppoinments = from A in _Context.Appoinments
+                                 join E in _Context.Employees on A.FkEmployeeId equals E.Id
+                                 join C in _Context.Customers on A.FkCustomerId equals C.Id
+                                 join CS in _Context.CustomerServices on A.FkCustomerServiceId equals CS.Id
+                                 join S in _Context.Services on CS.FkServiceId equals S.Id
+                                 join SS in _Context.ServiceSlots on A.FkServiceSlotId equals SS.Id
+                                 where (A.FkServiceSlotId == servicesSlotId || servicesSlotId == null)
+                                 select new OngoingAppoinmentsDto
+                                 {
+                                     CustomerName = C.Name,
+                                     ServiceDesk = E.HelpDesk_No,
+                                     EmployeeName = E.Name,
+                                     RequiredService = S.Name,
+                                     TimeSlot = SS.Name
                                  };
 
             //var xx = lstAppoinments;

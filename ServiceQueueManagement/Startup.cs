@@ -43,6 +43,7 @@ namespace ServiceQueueManagement
             services.AddTransient<ICustomerServiceService, CustomerServiceService>();
             services.AddTransient<IAppoinmentService, AppoinmentService>();
             services.AddTransient<IEmployeeServiceService, EmployeeServiceService>();
+            services.AddTransient<IServicesService, ServicesService>();
 
         }
 
@@ -53,6 +54,8 @@ namespace ServiceQueueManagement
             {
                 app.UseDeveloperExceptionPage();
             }
+
+            app.UseCors(builder => builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
 
             app.UseHttpsRedirection();
 

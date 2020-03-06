@@ -30,7 +30,8 @@ namespace ServiceQueueManagement.API.Controllers
         [HttpGet]
         public IActionResult GetAllCustomers()
         {
-            return Ok();
+            var lstOfCustomers = _customerService.GetAllCustomers();
+            return Ok(_customerService.GetAllCustomers());
         }
 
         /// <summary>
