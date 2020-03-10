@@ -39,7 +39,7 @@ namespace ServiceQueueManagement.API.Controllers
         [Microsoft.AspNetCore.Mvc.HttpGet]
         public List<OngoingAppoinmentsDto> GetOngoingAppoinment([FromQuery] int? serviceSlotId = null, [FromQuery] int? customerId = null)
         {
-            return _appoinmentService.GetOngoingAppoinmentsByServiceSlotId(serviceSlotId, customerId);
+            return _appoinmentService.GetOngoingAppoinmentsByServiceSlotIdOrCustomerId(serviceSlotId, customerId);
         }        
     }
 }

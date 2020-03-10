@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
+using System.Net.Http;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -30,8 +32,11 @@ namespace ServiceQueueManagement.API.Controllers
         [HttpPost]
         public async Task<ActionResult<IEnumerable<Customer>>> AddCustomerService(CustomerServiceDto customerServiceDto)
         {
-            var res = await _customerServiceService.CreateCustomerService(customerServiceDto);
-            return Ok(res);
+            if (!ModelState.IsValid)
+            {
+                return Ok(new HttpResponseMessage(HttpStatusCode.BadRequest));
+            }
+            return Ok(await _customerServiceService.CreateCustomerService(customerServiceDto));
         }
 
 

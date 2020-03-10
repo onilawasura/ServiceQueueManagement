@@ -21,7 +21,7 @@ namespace ServiceQueueManagement.Services
         /// used to create customer 
         /// </summary>
         /// <param name="newCustomer">requires Customer type object</param>
-        /// <returns>eturns the details of newly created customer</returns>
+        /// <returns>returns the details of newly created customer</returns>
         public async Task<Customer> CreateCustomer(Customer newCustomer)
         {
             await _unitOfWork.Customer.AddAsync(newCustomer);
@@ -31,6 +31,8 @@ namespace ServiceQueueManagement.Services
             return newCustomer;
         }
 
+        /// <summary>Retrieves list of customers</summary>
+        /// <returns>list of customers</returns>
         public List<Customer> GetAllCustomers()
         {
             var xx = _unitOfWork.Customer.GetAllCustomers(); ;

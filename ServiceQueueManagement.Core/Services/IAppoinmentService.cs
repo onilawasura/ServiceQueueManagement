@@ -17,6 +17,6 @@ namespace ServiceQueueManagement.Core.Services
         /// </summary>
         /// <param name="serviceSlotId">integer value for identify service slot</param>
         /// <returns>lsit of ongoing appoinments Dto object</returns>
-        List<OngoingAppoinmentsDto> GetOngoingAppoinmentsByServiceSlotId(int? serviceSlotId, int? customerId);
+        List<OngoingAppoinmentsDto> GetOngoingAppoinmentsByServiceSlotIdOrCustomerId(int? serviceSlotId, int? customerId);
     }
 }

@@ -15,19 +15,23 @@ namespace ServiceQueueManagement.Data.Repositories
             : base(context)
         { }
 
+
+
+        /// <summary>Retrieves list of customers available</summary>
+        /// <returns>List of cutomers</returns>
         public List<Customer> GetAllCustomers()
         {
             return _Context.Customers.ToList();
         }
 
-        public Task<IEnumerable<Customer>> GetAllWithServiceAsync()
-        {
-            throw new NotImplementedException();
-        }
+        //public Task<IEnumerable<Customer>> GetAllWithServiceAsync()
+        //{
+        //    throw new NotImplementedException();
+        //}
 
-        public Task<IEnumerable<Customer>> GetCustomerLikeAddress(string aaa)
-        {
-            throw new NotImplementedException();
-        }
+        //public Task<IEnumerable<Customer>> GetCustomerLikeAddress(string aaa)
+        //{
+        //    throw new NotImplementedException();
+        //}
     }
 }

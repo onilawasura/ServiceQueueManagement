@@ -18,6 +18,7 @@ namespace ServiceQueueManagement.Services.ServiceImp
             this._unitOfWork = unitOfWork;
         }
 
+        /// <summary>to trigger add apoinment method in apoinment service</summary>
         public void AddAppoinments()
         {
             var lstNotAssignedCustomers = _unitOfWork.CustomerService.GetAllNotAssignedCustomers();
@@ -61,6 +62,11 @@ namespace ServiceQueueManagement.Services.ServiceImp
                 }
                 appoinment.FkServiceSlotId = minQueue.ServiceSlotId + 1;
 
+                while(_unitOfWork.appoinmentRepository.IsExistAppoinmentByEmployeeAndServiceSlot(appoinment.FkEmployeeId, appoinment.FkServiceSlotId))
+                {
+                    appoinment.FkServiceSlotId = appoinment.FkServiceSlotId + 1;
+                }
+
                 _unitOfWork.appoinmentRepository.addAppoinment(appoinment);
                 _unitOfWork.CustomerService.UpdateAssignedCustomerServices(appoinment.FkCustomerServiceId);
                 _unitOfWork.CommitChanges();
@@ -68,7 +74,11 @@ namespace ServiceQueueManagement.Services.ServiceImp
 
         }
 
-        public List<OngoingAppoinmentsDto> GetOngoingAppoinmentsByServiceSlotId(int? serviceSlotId, int? customerId)
+        /// <summary>get the list of ongoing appoinments by given service slot</summary>
+        /// <param name="serviceSlotId">integer value for identify service slot</param>
+        /// <param name="customerId"></param>
+        /// <returns>lsit of ongoing appoinments Dto object</returns>
+        public List<OngoingAppoinmentsDto> GetOngoingAppoinmentsByServiceSlotIdOrCustomerId(int? serviceSlotId, int? customerId)
         {
 
             if (serviceSlotId == null && customerId == null)

@@ -44,5 +44,13 @@ namespace ServiceQueueManagement.Core.Repositories
         /// </summary>
         /// <param name="appoinment"></param>
         void addAppoinment(Appoinment appoinment);
+
+        /// <summary>
+        /// Checking whether a purticural record exist for given employee and service slot
+        /// </summary>
+        /// <param name="employeeId">integer value</param>
+        /// <param name="serviceSlotId">integer value</param>
+        /// <returns>if record exist true else false</returns>
+        bool IsExistAppoinmentByEmployeeAndServiceSlot(int employeeId, int? serviceSlotId);
     }
 }

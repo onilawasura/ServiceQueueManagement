@@ -15,6 +15,8 @@ namespace ServiceQueueManagement.Data.Repositories
 
         }
 
+        /// <summary>Rtrieves list of servie slots available</summary>
+        /// <returns>List of Service Slots</returns>
         public List<ServiceSlot> GetAllServiceSlot()
         {
             return _Context.ServiceSlots.ToList();

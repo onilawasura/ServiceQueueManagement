@@ -18,11 +18,15 @@ namespace ServiceQueueManagement.Services.ServiceImp
         {
             this._unitOfWork = unitOfWork;
         }
+        /// <summary>Retrieves all of the available services</summary>
+        /// <returns>list of  services</returns>
         public async Task<IEnumerable> GetAllServices()
         {
             return await _unitOfWork.ServicesRepository.GetAllAsync();
         }
 
+        /// <summary>retrieves all the service slots available</summary>
+        /// <returns>List of service slots</returns>
         public List<ServiceSlot> GetAllServiceSlots()
         {
             return _unitOfWork.ServicesRepository.GetAllServiceSlot();

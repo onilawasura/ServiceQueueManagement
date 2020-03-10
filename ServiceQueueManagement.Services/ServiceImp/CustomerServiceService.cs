@@ -33,6 +33,9 @@ namespace ServiceQueueManagement.Services.ServiceImp
         //    return true;
         //}
 
+        /// <summary>used to create customer services for given customer Id and list of service ids</summary>
+        /// <param name="customerServiceDto">customerService dto having customer id and list of services required</param>
+        /// <returns></returns>
         public async Task<CustomerServiceDto> CreateCustomerService(CustomerServiceDto customerServiceDto)
         {
 

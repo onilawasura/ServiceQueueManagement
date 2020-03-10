@@ -9,9 +9,9 @@ namespace ServiceQueueManagement.Core.Repositories
     public interface ICustomerRepository : IRepository<Customer>
     {
 
-        Task<IEnumerable<Customer>> GetAllWithServiceAsync();
+        //Task<IEnumerable<Customer>> GetAllWithServiceAsync();
 
-        Task<IEnumerable<Customer>> GetCustomerLikeAddress(string aaa);
+        //Task<IEnumerable<Customer>> GetCustomerLikeAddress(string aaa);
 
         /// <summary>
         /// Retrieves list of customers available
